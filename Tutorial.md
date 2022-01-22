@@ -26,6 +26,11 @@ CUDA的内存可以分成`linear memory`和`CUDA arrays`
 ## 1.3 线程层次
 一个warp包含32个threads。warp是一个很重要的概念，线程的调度、执行以及存储器操作都是以warp为基本单位的。
 
+
+## 1.4 Occupancy
+定义：the number of active warps per multiprocessing / maximum number of possible active warps
+可以查看/usr/local/cuda/tools/CUDA_Occupancy_Calculator.xls
+
 # Shared Memory
 共享内存的一个重点关注方向是**bank conflict**，如果可以避免**bank conflict**, 共享内存的速度可以和register相当。[《Bank Conflicts in Shared Memory in CUDA》](http://cuda-programming.blogspot.com/2013/02/bank-conflicts-in-shared-memory-in-cuda.html)这篇文章很好地解释了bank conflict。
 
